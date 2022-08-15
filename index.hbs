@@ -1,0 +1,15 @@
+{{!< default}}
+<main role="main">
+  {{!-- {{> header }} --}}
+  <section class="feed">
+    {{#foreach posts}}
+      {{!-- {{#has number="1"}}
+        {{> "first-post"}}
+      {{else}}
+        {{> post }}
+      {{/has}} --}}
+    {{/foreach}}
+  </section>
+  {{!-- {{> footer }} --}}
+</main>
+{{ghost_foot}}

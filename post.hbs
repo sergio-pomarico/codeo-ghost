@@ -1,0 +1,20 @@
+{{!< default}}
+<main role="main">
+  {{> header }}
+  {{#post}}
+  <article class="page">
+    <div class="page__header" style="background-image: url('{{img_url feature_image}}')">
+      <time class="page__date" datetime="{{date format="YYYY-MM-DDTHH:mm:ss.SS"}}">{{date published_at format="MMMM DD, YYYY"}}</time>
+      <h1 class="page__title">{{title}}</h1>
+      <div class="page__tags">
+        {{tags separator=","}}
+      </div>
+    </div>
+    <div class="page__content">
+      {{content}}
+    </div>
+  </article>
+  {{/post}}
+  {{> footer }}
+</main>
+{{ghost_foot}}

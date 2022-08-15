@@ -1,0 +1,84 @@
+@import 'variables';
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: $dark-body;
+    color: white;
+  }
+  a {
+    &:hover {
+      color: white;
+    }
+  }
+  .header {
+    background-color: $dark-header;
+    .header__menu {
+      span {
+        background-color: white;
+      }
+    }
+  }
+  .header-post {
+    background-color: transparent;
+  }
+  .header-sticky {
+    background-color: $dark-header !important;
+  }
+  .footer {
+    border-top: $lighten-line;
+  }
+  .post {
+    .post__content {
+      background-color: transparent;
+    }
+    .post__tags {
+      a {
+        color: white;
+      }
+    }
+    .post__title {
+      a {
+        color: white;
+      }
+    }
+    .post__date {
+      color: white;
+    }
+    .post__date {
+      border-top: $lighten-line;
+    }
+  }
+  .logo {
+    #c,
+    #o,
+    #d,
+    #e,
+    #line-1,
+    #line-2,
+    #line-3,
+    #line-4,
+    #line-5,
+    #line-6,
+    #line-7,
+    #line-8 {
+      fill: white;
+    }
+  }
+  .footer {
+    .footer__container {
+      .footer__svg {
+        path {
+          fill: white;
+        }
+      }
+    }
+  }
+  .page {
+    .page__content {
+      p > code {
+        background: $dark-header;
+        color: white;
+      }
+    }
+  }
+}

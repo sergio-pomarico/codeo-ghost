@@ -1,0 +1,224 @@
+@import 'variables';
+
+/* --------------------------------- */
+/*             Header                */
+/*---------------------------------- */
+
+.header {
+  align-items: center;
+  background-color: white;
+  display: flex;
+  height: calc(5rem + 5px);
+  justify-content: center;
+  flex-direction: column;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: all ease-in-out 300ms;
+  width: 100%;
+  z-index: 3;
+  .header__container {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: $container;
+    padding: 0 1rem;
+    width: 100%;
+  }
+  .header__logo,
+  a {
+    align-items: center;
+    display: flex;
+    margin: 0;
+    span {
+      display: none;
+    }
+  }
+  .header__menu {
+    cursor: pointer;
+    display: inline-block;
+    height: $logo-height;
+    position: relative;
+    width: $logo-height;
+    span {
+      background-color: black;
+      display: block;
+      height: 3px;
+      position: absolute;
+      top: calc(50% - 1.5px);
+      width: $logo-height;
+      &:nth-child(1) {
+        transform: translateY(-8px);
+      }
+      &:nth-child(3) {
+        transform: translateY(8px);
+      }
+    }
+  }
+}
+
+.header-up {
+  top: calc(-5rem + -5px);
+}
+
+.header-post {
+  background-color: transparent;
+  position: relative;
+}
+
+.header-sticky {
+  background-color: white !important;
+  animation: slide-down 0.7s;
+  position: sticky;
+}
+
+.progress {
+  background-color: #eeeeee;
+  height: 5px;
+  opacity: 0;
+  transition: opacity 350ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition-delay: 100ms;
+  width: 100%;
+  z-index: 2;
+  .progress__percentage {
+    background-color: $crayola-green;
+    display: block;
+    height: inherit;
+    transition: opacity 350ms cubic-bezier(0.39, 0.575, 0.565, 1);
+    width: 0%;
+    z-index: 100;
+  }
+}
+
+.progress-active {
+  opacity: 1;
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------- */
+/*               Menu                */
+/*---------------------------------- */
+
+.menu {
+  display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  .menu__container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    z-index: 102;
+  }
+}
+
+.navigation {
+  .navigation__items {
+    padding-left: 0;
+    .navigation__item {
+      backface-visibility: hidden;
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      list-style: none;
+      margin: 0 0 1.5rem;
+      opacity: 0;
+      text-transform: uppercase;
+      transition: opacity 500ms $cubic-bezier;
+      text-align: center;
+      a {
+        display: block;
+        color: $gun-metal-lighten-2;
+        font-family: $montserrat;
+        line-height: 2rem;
+        &:hover {
+          color: white;
+          transform: scale(1.1);
+        }
+      }
+    }
+    .navigation__item-active {
+      opacity: 1;
+    }
+  }
+}
+
+.menu-active {
+  opacity: 1;
+  visibility: visible;
+  .overlay {
+    opacity: 1;
+  }
+  .close {
+    opacity: 1;
+    transition-delay: 0.5s;
+  }
+}
+
+.close {
+  cursor: pointer;
+  height: 1.875rem;
+  position: absolute;
+  opacity: 0;
+  right: $logo-height * 2;
+  top: $logo-height * 2;
+  transition: opacity 400ms $cubic-bezier;
+  transition-delay: 300ms;
+  width: 1.875rem;
+  .close__rotate {
+    height: 1.875rem;
+    position: absolute;
+    transition: transform 0.4s ease 0s;
+    width: 1.875rem;
+    &:hover {
+      transform: rotate(180deg);
+    }
+    span {
+      background-color: white;
+      display: block;
+      height: 3px;
+      margin-top: 13px;
+      position: absolute;
+      width: 1.875rem;
+      &:first-child {
+        transform: rotate(45deg);
+      }
+      &:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.9);
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition: opacity 700ms $cubic-bezier;
+  transition-delay: 400ms;
+  width: 100%;
+  z-index: 4;
+}

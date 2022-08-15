@@ -1,0 +1,30 @@
+@import 'variables';
+@import 'mixins';
+
+/* --------------------------------- */
+/*             Footer                */
+/*---------------------------------- */
+
+.footer {
+  border-top: $darken-line;
+  padding: 1.5rem 0;
+  .footer__container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: $container;
+    .footer__svg {
+      height: 24px;
+      width: 24px;
+      path {
+        fill: $gun-metal;
+      }
+    }
+    span {
+      display: inline-block;
+      line-height: 24px;
+      margin: 0 0.5rem;
+    }
+  }
+}

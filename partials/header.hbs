@@ -1,0 +1,25 @@
+<header class="header {{#is "post"}}header-post{{/is}}">
+  <div class="header__container">
+    <div class="header__logo">
+      <span>{{@site.title}}</span>
+      {{#if @site.logo}}
+      <a itemprop="url" href="{{@site.url}}">
+        <img src="{{@site.logo}}" alt="{{@site.title}}">
+      </a>
+      {{else}}
+      {{> logo }}
+      {{/if}}
+    </div>
+    <a class="header__menu" href="javascript:void(0);">
+      <span></span>
+      <span></span>
+      <span></span>
+    </a>
+  </div>
+  {{> menu }}
+  {{#post}}
+  <div class="progress">
+    <span class="progress__percentage"></span>
+  </div>
+  {{/post}}
+</header>

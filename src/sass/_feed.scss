@@ -1,0 +1,153 @@
+@import 'variables';
+@import 'mixins';
+
+/* --------------------------------- */
+/*               Feed                */
+/*---------------------------------- */
+
+.feed {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 10% auto;
+  max-width: $container;
+  padding: 0 1.875rem;
+  @include media(xs) {
+    grid-template-columns: 1fr;
+    margin-top: 30%;
+    padding: 0 1rem;
+  }
+  @include media(md) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.post {
+  display: flex;
+  height: 25rem;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  &:first-child {
+    color: white;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    @include media(xs) {
+      grid-column-start: auto;
+      grid-column-end: auto;
+    }
+    .post__content {
+      align-items: center;
+      background-color: transparent;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: center;
+      left: 0;
+      opacity: 1;
+      padding-top: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+    .post__tags {
+      a {
+        color: white;
+        z-index: 2;
+      }
+    }
+    .post__title {
+      padding: 0;
+    }
+  }
+  .post__link,
+  .post__background {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+  .post__background {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    &::before {
+      background-image: linear-gradient(234deg, $gun-metal, black);
+      content: '';
+      display: block;
+      height: 100%;
+      opacity: 0.4;
+      width: 100%;
+    }
+  }
+  .post__link {
+    z-index: 1;
+  }
+  .post__header {
+    height: 11.25rem;
+    position: relative;
+    .post__background {
+      &::before {
+        display: none;
+      }
+    }
+  }
+  .post__content {
+    background-color: white;
+    flex: 1;
+    padding-top: 1.5rem;
+    position: relative;
+  }
+  .post__tags {
+    text-align: center;
+    margin-bottom: 10px;
+    a {
+      font-size: 10px;
+      letter-spacing: 2px;
+      position: relative;
+      text-transform: uppercase;
+      &::after {
+        background: $gun-metal-lighten-4;
+        bottom: -1px;
+        content: '';
+        height: 1px;
+        left: 0;
+        position: absolute;
+        right: 2px;
+      }
+    }
+  }
+  .post__title {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+    width: auto;
+    a {
+      color: $gun-metal;
+    }
+  }
+  .post__excerpt {
+    line-height: 1rem;
+    padding: 0.5rem 1rem;
+    margin: 0;
+    text-align: center;
+  }
+  .post__date {
+    border-top: 1px solid rgba(0, 0, 0, 0.065);
+    bottom: 0;
+    display: block;
+    padding: 0.625rem 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    time {
+      text-transform: capitalize;
+    }
+  }
+}

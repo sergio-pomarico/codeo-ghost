@@ -1,0 +1,9 @@
+<nav role="navigation" class="navigation">
+  <ul class="navigation__items">
+    {{#foreach navigation}}
+    <li class="navigation__item nav-{{slug}}">
+      <a href="{{url absolute="true"}}">{{label}}</a>
+    </li>
+    {{/foreach}}
+  </ul>
+</nav>
