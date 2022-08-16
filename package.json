@@ -1,0 +1,48 @@
+{
+  "name": "codeo",
+  "version": "1.0.0",
+  "description": "Ghost Theme for my personal blog",
+  "engines": {
+    "ghost": ">=5.0.0"
+  },
+  "scripts": {
+    "clean": "rimraf assets/",
+    "format": "prettier --write ./src",
+    "lint": "eslint --fix ./src",
+    "dev": "npm run clean & webpack --config webpack/webpack.config.dev.js",
+    "build": "npm run clean & webpack --config webpack/webpack.config.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergio-pomarico/codeo.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Sergio Pomárico",
+    "email": "sergiodavid21@gmail.com",
+    "url": "https://sergiopomarico.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sergio-pomarico/codeo/issues"
+  },
+  "homepage": "https://github.com/sergio-pomarico/codeo#readme",
+  "devDependencies": {
+    "@babel/core": "^7.18.10",
+    "@babel/plugin-transform-runtime": "^7.18.10",
+    "@babel/preset-env": "^7.18.10",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^2.6.1",
+    "prettier": "^2.7.1",
+    "sass": "^1.54.4",
+    "sass-loader": "^13.0.2",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
