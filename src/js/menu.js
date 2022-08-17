@@ -7,7 +7,7 @@ class Menu {
     this.header = document.querySelector('.header');
     this.items = document.querySelectorAll('.navigation__item');
     this.menu = document.querySelector('.menu');
-    this.page = document.querySelector('.page__content')
+    this.page = document.querySelector('.page__content');
     this.percentage = document.querySelector('.progress__percentage');
     this.progress = document.querySelector('.progress');
   }
@@ -22,7 +22,7 @@ class Menu {
 
   isPost() {
     return this.header.classList.contains('header-post');
-  };
+  }
 
   bindUIActions() {
     this.button.addEventListener('click', () => {
@@ -31,18 +31,17 @@ class Menu {
     this.close.addEventListener('click', () => {
       this.closeMenu();
     });
-    window.addEventListener('scroll', ()=> {
+    window.addEventListener('scroll', () => {
       this.scrollMenu();
       this.progressBar();
     });
-
   }
 
   openMenu() {
     this.toggleActive();
     this.header.classList.add('header-up');
     this.menu?.setAttribute('style', 'display: block;');
-    if(this.isPost()) {
+    if (this.isPost()) {
       this.progress.classList.remove('progress-active');
     }
     setTimeout(() => {
@@ -71,29 +70,36 @@ class Menu {
       this.menu.classList.remove('menu-active');
       this.menu.removeAttribute('style');
       this.header.classList.remove('header-up');
-      if( window.scrollY >= this.topbarHeight){
+      if (window.scrollY >= this.topbarHeight) {
         this.progress.classList.add('progress-active');
-      }else {
+      } else {
         this.progress.classList.remove('progress-active');
       }
     }, 1200);
   }
 
   scrollMenu() {
-    if(this.isPost()) {
-      this.header.classList.toggle('header-sticky', window.scrollY > this.topbarHeight);
-      this.progress.classList.toggle('progress-active', window.scrollY > this.topbarHeight)
+    if (this.isPost()) {
+      this.header.classList.toggle(
+        'header-sticky',
+        window.scrollY > this.topbarHeight,
+      );
+      this.progress.classList.toggle(
+        'progress-active',
+        window.scrollY > this.topbarHeight,
+      );
     }
   }
 
   progressBar() {
-    if(this.isPost()) {
-      let docElement = document.documentElement,
-          docBody = document.body,
-          scrollTop = docElement['scrollTop'] || docBody['scrollTop'],
-          scrollBottom = (docElement['scrollHeight'] || docBody['scrollHeight']) - window.innerHeight,
-          percentage = ((scrollTop) / scrollBottom) * 100;
-      this.percentage.style.width = percentage + "%";
+    if (this.isPost()) {
+      const docElement = document.documentElement;
+      const docBody = document.body;
+      const scrollTop = docElement.scrollTop || docBody.scrollTop;
+      const scrollBottom =
+        (docElement.scrollHeight || docBody.scrollHeight) - window.innerHeight;
+      const percentage = (scrollTop / scrollBottom) * 100;
+      this.percentage.style.width = `${percentage}%`;
     }
   }
 }
