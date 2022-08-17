@@ -1,25 +1,25 @@
-<html lang="{{@site.locale}}">
+<html lang='{{@site.locale}}'>
   <head>
     {{! Document Settings }}
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset='utf-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
 
     {{! Base Meta }}
     <title>{{meta_title}}</title>
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name='HandheldFriendly' content='True' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Lato|Oswald|Montserrat"
+      rel='stylesheet'
+      href='https://fonts.googleapis.com/css?family=Lato|Oswald|Montserrat'
     />
 
-    <link rel="stylesheet" href="{{asset 'css/styles.css'}}" />
+    <link rel='stylesheet' href='{{asset "css/styles.css"}}' />
     {{ghost_head}}
 
   </head>
-  <body class="{{body_class}}">
+  <body class='{{body_class}}'>
     {{{body}}}
-    <script src="{{asset 'js/main.bundle.js'}}"></script>
+    <script src='{{asset "js/main.bundle.js"}}'></script>
     {{ghost_foot}}
   </body>
 </html>

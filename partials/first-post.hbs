@@ -1,15 +1,18 @@
-<article class="{{post_class}}">
-  <a href="{{url}}" class="post__link"></a>
-  <div class="post__background" style="background-image: url({{img_url feature_image size='m'}});"></div>
-  <div class="post__content">
-    <div class="post__tags">
-      {{tags separator=","}}
+<article class='{{post_class}}'>
+  <a href='{{url}}' class='post__link'></a>
+  <div
+    class='post__background'
+    style='background-image: url({{img_url feature_image size='m'}});'
+  ></div>
+  <div class='post__content'>
+    <div class='post__tags'>
+      {{tags separator=','}}
     </div>
-    <h3 class="post__title">
+    <h3 class='post__title'>
       {{{title}}}
     </h3>
-    <section class="post__excerpt">
-      <p>{{excerpt characters="140"}}</p>
+    <section class='post__excerpt'>
+      <p>{{excerpt characters='140'}}</p>
     </section>
   </div>
 </article>

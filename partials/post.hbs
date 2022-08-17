@@ -1,22 +1,24 @@
-<article class="{{post_class}}">
+<article class='{{post_class}}'>
   {{#if feature_image}}
-  <div class="post__header">
-    <div
-      class="post__background"
-      style="background-image: url({{img_url feature_image size='m'}});"
-    ></div>
-    <a href="{{url}}" class="post__link"></a>
-  </div>
-  {{/if}}
-  <div class="post__content">
-    <div class="post__tags">
-      {{tags separator=","}}
+    <div class='post__header'>
+      <div
+        class='post__background'
+        style='background-image: url({{img_url feature_image size='m'}});'
+      ></div>
+      <a href='{{url}}' class='post__link'></a>
     </div>
-    <h3 class="post__title">
-      <a href="{{url}}">{{{title}}}</a>
+  {{/if}}
+  <div class='post__content'>
+    <div class='post__tags'>
+      {{tags separator=','}}
+    </div>
+    <h3 class='post__title'>
+      <a href='{{url}}'>{{{title}}}</a>
     </h3>
-    <a href="{{url}}" class="post__date">
-      <time datetime="{{date published_at format="YYYY-MM-DDTHH:mm:ss.SS"}}">{{date format="MMMM DD, YYYY"}}</time>
+    <a href='{{url}}' class='post__date'>
+      <time
+        datetime='{{date published_at format='YYYY-MM-DDTHH:mm:ss.SS'}}'
+      >{{date format='MMMM DD, YYYY'}}</time>
     </a>
   </div>
 </article>
