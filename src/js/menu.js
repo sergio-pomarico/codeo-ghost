@@ -7,7 +7,7 @@ class Menu {
     this.header = document.querySelector('.header');
     this.items = document.querySelectorAll('.navigation__item');
     this.menu = document.querySelector('.menu');
-    this.page = document.querySelector('.page__content');
+    this.page = document.querySelector('.page');
     this.percentage = document.querySelector('.progress__percentage');
     this.progress = document.querySelector('.progress');
   }
@@ -21,7 +21,7 @@ class Menu {
   }
 
   isPost() {
-    return this.header.classList.contains('header-post');
+    return this.page !== null;
   }
 
   bindUIActions() {
